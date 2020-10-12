@@ -1,20 +1,14 @@
 import lombok.Data;
 import lombok.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 @Data
 public class Book {
 
-    private final int isbn;
-
     @NonNull
     private String name;
 
-    @NonNull
-    private String genre;
-
-    @NonNull
-    private String publisher;
-
-    private final int authorId;
+    @NotNull
+    private String authorName;
 
 }

@@ -3,9 +3,10 @@ plugins {
     id 'application'
 }
 
+group 'com.minakov'
+version '1.0-SNAPSHOT'
+
 allprojects {
-    group 'com.minakov'
-    version '1.0-SNAPSHOT'
 
     apply plugin: 'java'
     apply plugin: 'application'
@@ -20,6 +21,8 @@ allprojects {
         compile group: 'com.intellij', name: 'annotations', version: '12.0'
 
         implementation 'com.google.code.gson:gson:2.8.6'
+        implementation 'org.jetbrains:annotations:20.1.0'
+        implementation 'com.google.inject:guice:4.0'
 
         compileOnly 'org.projectlombok:lombok:1.18.12'
         annotationProcessor 'org.projectlombok:lombok:1.18.12'
@@ -27,6 +30,9 @@ allprojects {
         testCompileOnly 'org.projectlombok:lombok:1.18.12'
         testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
+        testImplementation 'junit:junit:4.12'
+        testImplementation 'org.hamcrest:hamcrest-all:1.3'
+        testImplementation 'org.mockito:mockito-core:2.24.0'
     }
 }
 
