@@ -7,10 +7,10 @@ public class LibraryFactory {
 
     @Inject
     public LibraryFactory(int capacity, String fileName) {
-        this.library = createLibrary(capacity, fileName);
+        this.library = library(capacity, fileName);
     }
 
-    public Library createLibrary(int capacity, String fileName) {
+    public Library library(int capacity, String fileName) {
         return new Library(capacity, fileName);
     }
 }
