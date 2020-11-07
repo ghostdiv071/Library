@@ -1,6 +1,5 @@
 import lombok.Data;
 import lombok.NonNull;
-import org.jetbrains.annotations.NotNull;
 
 @Data
 public class Book {
@@ -8,7 +7,7 @@ public class Book {
     @NonNull
     private String name;
 
-    @NotNull
+    @NonNull
     private String authorName;
 
 }
