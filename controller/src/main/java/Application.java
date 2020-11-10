@@ -7,5 +7,6 @@ public class Application {
     public static void main(@NotNull String[] args) {
         final Injector injector = Guice.createInjector();
         injector.getInstance(LibraryFactory.class).library(100, "controller/src/main/java/books");
+        System.out.println("Success");
     }
 }

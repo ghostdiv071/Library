@@ -2,6 +2,8 @@ import com.google.inject.Inject;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 public class Library {
 
     @NotNull
@@ -25,15 +27,18 @@ public class Library {
         fileBookFactory = new FileBookFactory(this.fileName);
 
         try {
-            Book[] bookArray = (Book[]) fileBookFactory.books().toArray();
-            System.arraycopy(bookArray, 0, books, 0, bookArray.length);
+            ArrayList<Book> bookArrayList = new ArrayList<>(fileBookFactory.books());
+            for (int i = 0; i < bookArrayList.size(); i++) {
+                books[i] = bookArrayList.get(i);
+            }
         } catch (Exception e) {
             throw new IndexOutOfBoundsException();
         }
     }
 
-    public String getBook(int index) {
-        return index + " " + books[index].toString();
+    public Book getBook(int index) {
+        System.out.println(index + ": " + books[index].toString());
+        return books[index];
     }
 
     public void addBook(Book book) {
@@ -50,7 +55,7 @@ public class Library {
         }
     }
 
-    public void printToConsole() {
+    public void printAll() {
         for (Book book : books) {
             System.out.println(book.toString());
         }
