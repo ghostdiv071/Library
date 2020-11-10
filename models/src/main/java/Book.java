@@ -8,6 +8,6 @@ public class Book {
     private String name;
 
     @NonNull
-    private String authorName;
+    private Author author;
 
 }
